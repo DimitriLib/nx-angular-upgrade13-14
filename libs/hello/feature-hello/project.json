@@ -1,0 +1,43 @@
+{
+  "name": "hello-feature-hello",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/hello/feature-hello/src",
+  "prefix": "hello",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/libs/hello/feature-hello"],
+      "options": {
+        "project": "libs/hello/feature-hello/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/hello/feature-hello/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/hello/feature-hello/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/hello/feature-hello"],
+      "options": {
+        "jestConfig": "libs/hello/feature-hello/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/hello/feature-hello/src/**/*.ts",
+          "libs/hello/feature-hello/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:hello", "type:feature"]
+}

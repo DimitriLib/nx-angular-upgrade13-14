@@ -1,0 +1,9 @@
+<h1>hello-hello</h1>
+
+<table class="table">
+  <tr *ngFor="let hello of helloList$ | async">
+    <td>{{ hello.id }}</td>
+    <td>{{ hello.name }}</td>
+    <td>{{ hello.description }}</td>
+  </tr>
+</table>

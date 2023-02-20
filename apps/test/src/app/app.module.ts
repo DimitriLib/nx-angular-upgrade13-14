@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { HelloFeatureHelloModule } from '@test/hello/feature-hello';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, HelloFeatureHelloModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,6 +1,9 @@
 {
   "version": 2,
   "projects": {
+    "hello-domain": "libs/hello/domain",
+    "hello-feature-hello": "libs/hello/feature-hello",
+    "hello-ui-hello": "libs/hello/ui-hello",
     "test": "apps/test",
     "test-e2e": "apps/test-e2e"
   }

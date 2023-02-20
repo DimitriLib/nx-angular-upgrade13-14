@@ -1,0 +1,43 @@
+{
+  "name": "hello-ui-hello",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/hello/ui-hello/src",
+  "prefix": "hello",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/libs/hello/ui-hello"],
+      "options": {
+        "project": "libs/hello/ui-hello/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/hello/ui-hello/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/hello/ui-hello/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/hello/ui-hello"],
+      "options": {
+        "jestConfig": "libs/hello/ui-hello/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/hello/ui-hello/src/**/*.ts",
+          "libs/hello/ui-hello/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["domain:hello", "type:ui"]
+}

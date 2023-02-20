@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@test/hello/domain": ["libs/hello/domain/src/index.ts"],
+      "@test/hello/feature-hello": ["libs/hello/feature-hello/src/index.ts"],
+      "@test/hello/ui-hello": ["libs/hello/ui-hello/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
