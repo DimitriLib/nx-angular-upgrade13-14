@@ -15,7 +15,15 @@
         "polyfills": "apps/test/src/polyfills.ts",
         "tsConfig": "apps/test/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/test/src/favicon.ico", "apps/test/src/assets"],
+        "assets": ["apps/test/src/favicon.ico",
+          "apps/test/src/assets",
+          {
+            "glob": "**/*",
+            "input": "./node_modules/tinymce",
+            "output": "/tinymce/"
+          }
+
+        ],
         "styles": ["apps/test/src/styles.scss"],
         "scripts": []
       },
@@ -71,13 +79,13 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": ["apps/test/src/**/*.ts", "apps/test/src/**/*.html"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/test"],
       "options": {
         "jestConfig": "apps/test/jest.config.ts",
